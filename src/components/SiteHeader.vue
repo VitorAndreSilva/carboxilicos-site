@@ -32,6 +32,7 @@ const links = [
   { to: '/importancia', label: 'Importância' },
   { to: '/aplicacoes', label: 'Aplicações' },
   { to: '/sociedade', label: 'Sociedade' },
+  { to: '/referencias', label: 'Referências' },
 ]
 </script>
 
