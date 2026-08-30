@@ -89,15 +89,6 @@ function barHeight(bp) {
   return Math.max(14, (bp / bpMax) * 100)
 }
 
-const pkaTable = [
-  { acido: 'Ácido clorídrico (HCl)', tipo: 'ácido mineral forte', pka: '≈ –7', forca: 'Forte' },
-  { acido: 'Ácido oxálico (HOOC–COOH)', tipo: 'dicarboxílico', pka: '1,25', forca: 'Fortíssimo (orgânico)' },
-  { acido: 'Ácido fórmico (HCOOH)', tipo: 'monocarboxílico', pka: '3,75', forca: 'Fraco' },
-  { acido: 'Ácido cítrico', tipo: 'tricarboxílico', pka: '3,13 / 4,76 / 6,40', forca: 'Fraco' },
-  { acido: 'Ácido benzóico (C₆H₅COOH)', tipo: 'aromático', pka: '4,20', forca: 'Fraco' },
-  { acido: 'Ácido acético (CH₃COOH)', tipo: 'monocarboxílico', pka: '4,76', forca: 'Fraco' },
-]
-
 const peBars = serial.map((s) => ({ nome: s.nome, c: s.c, bp: s.bp }))
 </script>
 
@@ -252,35 +243,34 @@ const peBars = serial.map((s) => ({ nome: s.nome, c: s.c, bp: s.bp }))
 
         <Reveal :delay="140">
           <div class="panel" style="margin-top: 1.6rem">
-            <p class="panel-label">Qualitativamente, quanto mais forte?</p>
+            <p class="panel-label">O efeito dos substituintes</p>
             <p>
-              A força é medida pelo <strong>pKa</strong>: quanto <strong>menor</strong> o pKa,
-              maior a tendência de doar o próton. Os ácidos carboxílicos típicos ficam na faixa
-              <span class="chem">pKa ≈ 3–5</span> — fracos, mas muito mais ácidos que a água (pKa ≈ 14).
+              Essa estabilidade não é fixa: ela <strong>varia com os substituintes</strong> ligados ao
+              ácido. Se um elemento muito eletronegativo, como o <strong>cloro</strong>, se liga ao
+              novo ácido, ele <em>atrai elétrons</em> e ajuda a espalhar a carga negativa — o que
+              <strong>estabiliza ainda mais</strong> o íon carboxilato.
             </p>
-            <div class="table-wrap" style="margin-top: 1rem">
-              <table class="tbl">
-                <thead>
-                  <tr>
-                    <th>Espécie</th>
-                    <th>Tipo</th>
-                    <th>pKa (≈)</th>
-                    <th>Caráter</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr v-for="p in pkaTable" :key="p.acido">
-                    <td>{{ p.acido }}</td>
-                    <td>{{ p.tipo }}</td>
-                    <td class="chem">{{ p.pka }}</td>
-                    <td>{{ p.forca }}</td>
-                  </tr>
-                </tbody>
-              </table>
+            <div class="subst" style="margin-top: 1rem">
+              <div class="subst-card">
+                <div class="subst-eq"><span class="chem">ClCH₂COO⁻</span></div>
+                <p class="subst-tag">Mais estável</p>
+                <p class="small" style="margin: 0">
+                  O cloro, eletronegativo, puxa elétrons e dispersa a carga → ânion mais estável.
+                </p>
+              </div>
+              <div class="subst-vs">vs</div>
+              <div class="subst-card">
+                <div class="subst-eq"><span class="chem">CH₃COO⁻</span></div>
+                <p class="subst-tag">Menos estável</p>
+                <p class="small" style="margin: 0">
+                  O grupo metila é fracamente doador de elétrons → carga menos dispersa.
+                </p>
+              </div>
             </div>
             <p class="small" style="margin-top: 0.9rem">
-              Valores aproximados (25 °C). Substituintes atraem elétrons (ex.: cloro, grupos –OH)
-              e efeitos de ressonância podem deslocar a acidez — um bom gancho para discussão em sala.
+              Conclusão: <strong>quanto mais estável o íon carboxilato</strong> formado após a perda
+              do H⁺, maior a tendência de ionização — por isso substituintes atraem elétrons
+              (como o cloro) <strong>aumentam a acidez</strong>.
             </p>
           </div>
         </Reveal>
@@ -397,7 +387,54 @@ const peBars = serial.map((s) => ({ nome: s.nome, c: s.c, bp: s.bp }))
       </div>
     </section>
 
-    <!-- 5 · INTERATIVO: SOLUBILIDADE x CADEIA -->
+    <!-- 5 · LIGAÇÕES DE HIDROGÊNIO -->
+    <section class="section" style="border-top: 1px solid var(--line)">
+      <div class="container">
+        <Reveal>
+          <div class="section-head">
+            <p class="kicker">Interações entre moléculas</p>
+            <h2>Ligações de hidrogênio: <span class="grad-text">O–H ··· O</span></h2>
+            <p class="lead">
+              Como os oxigênios são muito eletronegativos (visto na eletronegatividade), ao
+              interagir consigo mesmos os ácidos carboxílicos formam
+              <strong>ligações de hidrogênio</strong> — o hidrogênio ligado a elementos muito
+              eletronegativos como flúor, oxigênio ou nitrogênio.
+            </p>
+          </div>
+        </Reveal>
+
+        <Reveal :delay="120">
+          <div class="panel split" style="align-items: center">
+            <section class="hbond" aria-label="Ligação de hidrogênio entre duas carboxilas">
+              <div class="hbond-scheme">
+                <div class="hbond-col">
+                  <span class="hbond-mol">O–H ··· O</span>
+                  <span class="hbond-mol bottom">C</span>
+                  <span class="hbond-mol">O ··· H–O</span>
+                </div>
+              </div>
+              <div class="caption">
+                <b>Ligação de hidrogênio</b> — o hidrogênio interage com o oxigênio de outra molécula.
+              </div>
+            </section>
+            <div>
+              <p class="panel-label">Como funciona</p>
+              <ul class="clean tick">
+                <li>O hidrogênio da hidroxila fica com δ⁺ (repartiu seus elétrons com o O).</li>
+                <li>Ele se aproxima do oxigênio (δ⁻) de outra molécula vizinha.</li>
+                <li>Surge uma <strong>ponte O–H ··· O</strong> — intensa e direcional.</li>
+                <li>Cada carboxila tem dois sítios (doar e receber H) → tende a formar dímeros.</li>
+              </ul>
+              <p class="small" style="margin-top: 0.8rem">
+                É essa interação forte que ajuda a explicar os altos pontos de ebulição, como veremos a seguir.
+              </p>
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+
+    <!-- 6 · INTERATIVO: SOLUBILIDADE x CADEIA -->
     <section class="section" style="border-top: 1px solid var(--line)" id="simulador">
       <div class="container">
         <Reveal>
@@ -576,7 +613,81 @@ const peBars = serial.map((s) => ({ nome: s.nome, c: s.c, bp: s.bp }))
       </div>
     </section>
 
-    <!-- 7 · RECAP -->
+    <!-- 7 · ÁCIDOS GRAXOS SATURADOS / INSATURADOS · CIS E TRANS -->
+    <section class="section" style="border-top: 1px solid var(--line)">
+      <div class="container">
+        <Reveal>
+          <div class="section-head">
+            <p class="kicker">Ácidos graxos na prática</p>
+            <h2>Saturados, insaturados &amp; <span class="grad-text">cis/trans</span></h2>
+            <p class="lead">
+              A diferença entre <strong>ligações simples e duplas</strong> na cadeia muda o estado
+              físico dos ácidos graxos à temperatura ambiente — e a geometria em torno da dupla
+              (cis ou trans) altera ainda mais o comportamento.
+            </p>
+          </div>
+        </Reveal>
+
+        <Reveal :delay="100">
+          <div class="grid grid-2" style="margin-top: 1.6rem; align-items: stretch">
+            <div class="card">
+              <p class="panel-label">Saturados</p>
+              <p style="margin: 0">
+                Só há <strong>ligações simples</strong> entre os carbonos. A cadeia fica linear,
+                empacota bem e, por isso, são encontrados em
+                <strong>estado sólido à temperatura ambiente</strong> — com maior ponto de fusão.
+              </p>
+            </div>
+            <div class="card">
+              <p class="panel-label">Insaturados</p>
+              <p style="margin: 0">
+                Existem <strong>ligações duplas</strong> na cadeia. As dobras reduzem o empacotamento:
+                são encontrados em <strong>estado líquido à temperatura ambiente</strong>, com ponto
+                de fusão menor.
+              </p>
+            </div>
+          </div>
+        </Reveal>
+
+        <Reveal :delay="160">
+          <div class="panel split" style="align-items: center; margin-top: 1.6rem">
+            <div>
+              <p class="panel-label">Configuração cis × trans</p>
+              <p style="margin: 0">
+                Na dupla ligação, em <strong>cis</strong> os grupos ficam
+                <strong>do mesmo lado</strong> (cadeia dobrada); em <strong>trans</strong> ficam em
+                lados <strong>opostos</strong> (cadeia mais linear). A linearidade do trans permite
+                melhor empacotamento → <strong>maior ponto de fusão</strong>.
+              </p>
+            </div>
+            <div class="geom" aria-label="Geometria cis e trans">
+              <div class="geom-card">
+                <div class="geom-title">cis</div>
+                <svg viewBox="0 0 200 70" class="geom-svg" role="img" aria-hidden="true">
+                  <line x1="30" y1="35" x2="100" y2="35" stroke="var(--text-soft)" stroke-width="2" />
+                  <line x1="100" y1="35" x2="170" y2="35" stroke="var(--text-soft)" stroke-width="4" />
+                  <line x1="70" y1="18" x2="70" y2="52" stroke="var(--amber)" stroke-width="3" />
+                  <line x1="130" y1="18" x2="130" y2="52" stroke="var(--amber)" stroke-width="3" />
+                </svg>
+                <div class="caption">grupos do mesmo lado → dobrado</div>
+              </div>
+              <div class="geom-card">
+                <div class="geom-title">trans</div>
+                <svg viewBox="0 0 200 70" class="geom-svg" role="img" aria-hidden="true">
+                  <line x1="20" y1="35" x2="100" y2="35" stroke="var(--text-soft)" stroke-width="2" />
+                  <line x1="100" y1="35" x2="180" y2="35" stroke="var(--text-soft)" stroke-width="4" />
+                  <line x1="70" y1="18" x2="70" y2="52" stroke="var(--amber)" stroke-width="3" />
+                  <line x1="130" y1="18" x2="130" y2="52" stroke="var(--mint)" stroke-width="3" />
+                </svg>
+                <div class="caption">grupos em lados opostos → linear</div>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+
+    <!-- 8 · RECAP -->
     <section class="section section-tight" style="border-top: 1px solid var(--line)">
       <div class="container">
         <Reveal>
@@ -919,5 +1030,121 @@ const peBars = serial.map((s) => ({ nome: s.nome, c: s.c, bp: s.bp }))
 
 .dimer .caption {
   margin-top: 0.6rem;
+}
+
+/* ---------- ligação de hidrogênio ---------- */
+.hbond {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-2);
+  padding: 1.4rem 1rem;
+  text-align: center;
+  min-width: 260px;
+}
+
+.hbond-scheme {
+  display: grid;
+  place-items: center;
+}
+
+.hbond-col {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--text-soft);
+  display: grid;
+  gap: 0.7rem;
+  font-size: 1.05rem;
+}
+
+.hbond-mol {
+  display: block;
+}
+
+.hbond-mol.bottom {
+  padding-left: 1.6rem;
+  color: var(--muted);
+}
+
+.hbond .caption {
+  margin-top: 0.8rem;
+}
+
+/* ---------- geometria cis / trans ---------- */
+.geom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  min-width: 300px;
+}
+
+.geom-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-2);
+  padding: 0.8rem;
+  text-align: center;
+}
+
+.geom-title {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--amber);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.4rem;
+}
+
+.geom-svg {
+  width: 100%;
+  height: auto;
+}
+
+.geom-card .caption {
+  font-size: 0.72rem;
+  margin-top: 0.4rem;
+}
+
+@media (max-width: 480px) {
+  .geom {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- efeito de substituintes ---------- */
+.subst {
+  display: flex;
+  align-items: stretch;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.subst-card {
+  flex: 1;
+  min-width: 200px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-2);
+  padding: 1rem;
+}
+
+.subst-eq {
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.subst-tag {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  color: var(--mint);
+  margin: 0 0 0.4rem;
+}
+
+.subst-vs {
+  display: grid;
+  place-items: center;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--amber);
 }
 </style>

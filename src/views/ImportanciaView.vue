@@ -44,54 +44,75 @@ const ester = {
   ],
 }
 
-const frentes = [
-  {
-    titulo: 'Alimentícia',
-    sigla: 'A',
-    itens: ['Acidulantes (INS 330 — ácido cítrico)', 'Conservantes (INS 210 — benzóico; 200 — sórbico)', 'Reguladores de acidez e processamento', 'Vinagre: fermentação acética controlada'],
-  },
-  {
-    titulo: 'Farmacêutica',
-    sigla: 'F',
-    itens: ['Aspirina — ácido acetilsalicílico', 'Ibuprofeno — AINE, ácido aril-propanóico', 'Sais carboxilatos como princípios ativos', 'Intermediários de síntese de medicamentos'],
-  },
-  {
-    titulo: 'Polímeros',
-    sigla: 'P',
-    itens: ['PLA — ácido polilático, biodegradável', 'PET — a partir do ácido tereftálico', 'Acrílicos — do ácido acrílico', 'Nilons — a partir de diácidos (adípico)'],
-  },
-  {
-    titulo: 'Cosméticos & cuidados',
-    sigla: 'C',
-    itens: ['AHAs: glicólico, lático e cítrico', 'Ácido salicílico (BHA) — pele oleosa', 'Controle de pH de formulações', 'Sabões = sais de ácidos graxos'],
-  },
-  {
-    titulo: 'Química industrial',
-    sigla: 'Q',
-    itens: ['Ésteres como solventes e aromas', 'Acetato de vinila (VAM) para tintas e adesivos', 'PTA para poliéster e embalagens', 'Surfactantes, intermediários e anidridos'],
-  },
-  {
-    titulo: 'Doméstica & cotidiano',
-    sigla: 'D',
-    itens: ['Vinagre: limpeza e desengraxante', 'Ácido cítrico: remove calcário', 'Conservas e picles', 'Antitártaro de cafeteiras e chaleiras'],
-  },
-]
+const oleico = {
+  atoms: [
+    { x: 6, y: 50, el: 'R' },
+    { x: 52, y: 50, el: 'C' },
+    { x: 92, y: 50, el: 'C' },
+    { x: 132, y: 50, el: 'R' },
+    { x: 170, y: 30, el: 'O' },
+    { x: 170, y: 68, el: 'O' },
+    { x: 190, y: 80, el: 'H' },
+  ],
+  bonds: [
+    [0, 1],
+    [1, 2, 2],
+    [2, 3],
+    [3, 4, 2],
+    [3, 5],
+    [5, 6],
+  ],
+}
 
-const rotas = [
+const acidos = [
   {
-    rotulo: 'Rota dos fósseis',
-    texto: 'Carbonilação do metanol (derivado de gás natural/carvão) responde por ~80% do ácido acético industrial.',
-    chip: 'C1 → carbonilação',
+    icone: 'Ac',
+    nome: 'Ácido Acético (Ácido Etanóico)',
+    sub: 'Conhecido principalmente por ser o principal componente do vinagre',
+    domestica: 'Ele é utilizado diluído em água em diversas casas brasileiras para temperar os alimentos, sendo chamado de vinagre; nessa forma também é muito utilizado na limpeza para remover manchas, gordura e até mofo.',
+    industrial: 'É utilizado na produção de plásticos, essências artificiais e no tingimento de tecidos.',
+    tecnologica: 'É utilizado para regular o pH de diversos medicamentos e suplementos que ajudam na estabilização da pressão arterial e redução do açúcar no sangue, pois são muito sensíveis.',
   },
   {
-    rotulo: 'Rota da biomassa',
-    texto: 'Fermentação microbiana de açúcares (A. niger para o cítrico; bactérias acéticas para o acético).',
-    chip: 'C6H12O6 → fermentação',
+    icone: 'Ci',
+    nome: 'Ácido Cítrico',
+    sub: 'É encontrado naturalmente em frutas cítricas como laranja e limão',
+    domestica: 'Esse ácido pode ser utilizado em conservas caseiras, geleias e doces, para controlar a gelificação e realçar o sabor frutado.',
+    industrial: 'É utilizado como acidulante, aumentando o sabor azedo ou ácido e controlando o pH do alimento ou bebida; também usado como antioxidante, prevenindo a oxidação do alimento, preservando por mais tempo a cor do alimento e aumentando sua validade.',
+    tecnologica: 'Na medicina, é utilizado para evitar a coagulação do sangue e, na indústria de laticínios, é usado como emulsificante na fabricação de iogurtes e queijos.',
   },
   {
-    rotulo: 'Rota do etanol (Brasil)',
-    texto: 'Oxidação do etanol de cana-de-açúcar — vantagem renovável e rota bio disponível no país.',
-    chip: 'C2H5OH → oxidação',
+    icone: 'Gr',
+    nome: 'Ácidos Graxos',
+    sub: 'São encontrados em gorduras e óleos, possuem cadeias longas, podendo ser saturadas ou insaturadas',
+    domestica: 'São a base de sabões e detergentes, pois suas moléculas interagem com a gordura e a água, facilitando a limpeza.',
+    industrial: 'Na indústria são utilizados na produção de lubrificantes, tintas, plastificantes e biocombustíveis.',
+    tecnologica: 'São utilizados na criação de cremes para a pele para aumentar a absorção dos ativos presentes no creme; além disso, são usados em medicamentos para controlar a liberação dos fármacos.',
+    mostraOleico: true,
+  },
+  {
+    icone: 'Sa',
+    nome: 'Ácido Salicílico',
+    sub: 'Tem afinidade natural por óleos, permitindo a penetração nos poros',
+    domestica: 'É utilizado em géis de limpeza fácil, shampoos e hidratantes para pele oleosa.',
+    industrial: 'É usado em maquiagens tecnológicas, como bases líquidas que controlam a oleosidade da pele.',
+    tecnologica: 'É essencial para tratamentos de acne, pois age dissolvendo o óleo da pele e ajudando a renovação celular.',
+  },
+  {
+    icone: 'Bz',
+    nome: 'Ácido Benzóico',
+    sub: 'É usado por suas propriedades conservantes e antimicrobianas',
+    domestica: 'Está presente em produtos de higiene pessoal como loções e cremes.',
+    industrial: 'É utilizado como conservante em bebidas gaseificadas, molhos, entre outros, pois impede o crescimento de fungos e bactérias.',
+    tecnologica: 'É utilizado na fabricação de resinas, perfumes e plastificantes.',
+  },
+  {
+    icone: 'Me',
+    nome: 'Ácido Metanóico (Ácido Fórmico)',
+    sub: 'É produzido naturalmente por formigas, por isso é chamado de ácido fórmico; entretanto, também é encontrado em abelhas e plantas como urtigas',
+    domestica: 'É utilizado na limpeza pesada, pois está presente em produtos com funções desincrustantes.',
+    industrial: 'É utilizado no curtimento de couros para preservá-los, no acabamento de tecidos, para coagular o látex e para controle de pH em diversos produtos.',
+    tecnologica: 'É usado como bactericida e fungicida na alimentação de animais e também para a preservação de forragens e silagens.',
   },
 ]
 
@@ -156,68 +177,50 @@ const numeros = [
       </div>
     </section>
 
-    <!-- FRENTES -->
+    <!-- ÁCIDOS -->
     <section class="section" style="border-top: 1px solid var(--line)">
       <div class="container">
         <Reveal>
           <div class="section-head">
-            <p class="kicker">Seis frentes de uso</p>
-            <h2>Onde a carboxila <span class="grad-text">trabalha</span></h2>
+            <p class="kicker">Os seis mais conhecidos</p>
+            <h2>Os ácidos carboxílicos e sua <span class="grad-text">importância</span></h2>
           </div>
         </Reveal>
 
         <div class="grid grid-3">
-          <Reveal v-for="(f, i) in frentes" :key="f.titulo" :delay="(i % 3) * 90">
-            <div class="card frente-card">
+          <Reveal v-for="(a, i) in acidos" :key="a.nome" :delay="(i % 3) * 90">
+            <div class="card acido-card">
               <div class="frente-head">
-                <span class="frente-icone">{{ f.sigla }}</span>
-                <h3 style="margin: 0">{{ f.titulo }}</h3>
+                <span class="frente-icone">{{ a.icone }}</span>
+                <h3 style="margin: 0">{{ a.nome }}</h3>
               </div>
-              <ul class="clean tick">
-                <li v-for="it in f.itens" :key="it">{{ it }}</li>
+              <p class="acido-sub">{{ a.sub }}</p>
+
+              <div v-if="a.mostraOleico" class="oleico-fig">
+                <Molecule :atoms="oleico.atoms" :bonds="oleico.bonds" view="0 0 205 95" :scale="0.9" />
+                <span class="oleico-caption">
+                  Na imagem acima está o ácido oleico, também conhecido como ômega 9, um ácido
+                  graxo, ele é monoinsaturado.
+                </span>
+              </div>
+
+              <ul class="clean tag-list">
+                <li>
+                  <span class="tag tag-dom">Doméstica</span>
+                  <span>{{ a.domestica }}</span>
+                </li>
+                <li>
+                  <span class="tag tag-ind">Industrial</span>
+                  <span>{{ a.industrial }}</span>
+                </li>
+                <li>
+                  <span class="tag tag-tec">Tecnológica</span>
+                  <span>{{ a.tecnologica }}</span>
+                </li>
               </ul>
             </div>
           </Reveal>
         </div>
-      </div>
-    </section>
-
-    <!-- ROTAS -->
-    <section class="section" style="border-top: 1px solid var(--line)">
-      <div class="container">
-        <Reveal>
-          <div class="section-head">
-            <p class="kicker">de onde vem</p>
-            <h2>Três rotas de produção</h2>
-            <p class="lead">
-              O ponto de partida muda o perfil ambiental e econômico. Na prática, a indústria
-              combina rotas fósseis e renováveis — e o Brasil tem um trunfo na rota do etanol.
-            </p>
-          </div>
-        </Reveal>
-
-        <div class="grid grid-3">
-          <Reveal v-for="(r, i) in rotas" :key="r.rotulo" :delay="i * 100">
-            <div class="card rota-card">
-              <span class="chip chip-amber">{{ r.chip }}</span>
-              <h3 style="margin: 0.9rem 0 0.5rem">{{ r.rotulo }}</h3>
-              <p style="margin: 0; font-size: 0.95rem">{{ r.texto }}</p>
-            </div>
-          </Reveal>
-        </div>
-
-        <Reveal :delay="140">
-          <div class="panel card-amber" style="margin-top: 2rem">
-            <p style="margin: 0">
-              <strong>Derivados diretos:</strong> a carboxila não é só a molécula-final — ela vira
-              <span class="chem">ésteres</span> (aromas, solventes, poliésteres),
-              <span class="chem">sais / carboxilatos</span> (sabões, conservantes),
-              <span class="chem">anidridos</span> (aspirina, acetato de celulose) e
-              <span class="chem">amidas</span> (polímeros e fármacos). É uma <em>plataforma</em> de
-              transformação química.
-            </p>
-          </div>
-        </Reveal>
       </div>
     </section>
 
@@ -230,24 +233,25 @@ const numeros = [
               <p class="kicker">Na sua casa</p>
               <h2>Química doméstica <span class="grad-text">sem surpresa</span></h2>
               <p class="lead">
-                Guarde o “Q.D.” da próxima apresentação: quase todo armário de cozinha e banheiro
-                guarda um ácido carboxílico trabalhando.
+                Quase todo armário de cozinha e banheiro guarda um ácido carboxílico trabalhando.
               </p>
               <ul class="clean tick">
-                <li><strong>Vinagre (4–8% de ácido acético):</strong> desengraxante, remove calcário, conserva alimentos.</li>
-                <li><strong>Ácido cítrico em pó:</strong> desincrustante de chaleiras, cafeteiras e banheiros.</li>
-                <li><strong>Sais benzóicos/sórbicos:</strong> aumentam a validade de refrigerantes, molhos e doces.</li>
-                <li><strong>Sabões:</strong> sais de ácidos graxos — a carboxila “esconde” sua versatilidade na espuma.</li>
+                <li><strong>Ácido Acético (Ácido Etanóico):</strong> presente no vinagre, ele tempera alimentos, remove manchas difíceis, gordura e ferrugem.</li>
+                <li><strong>Ácido Cítrico:</strong> presente em conservas caseiras, geleias e doces para controlar a gelificação e realçar o sabor frutal.</li>
+                <li><strong>Ácidos Graxos:</strong> presente em sabões e detergentes, pois interagem com a gordura e a água para remover a sujeira.</li>
+                <li><strong>Ácido Salicílico:</strong> presente em géis de limpeza facial, shampoos e hidratantes para pele oleosa; trata acne e cravos.</li>
+                <li><strong>Ácido Benzóico:</strong> presente em produtos de higiene pessoal, como loções e cremes tópicos, além de conservar bebidas e molhos.</li>
+                <li><strong>Ácido Metanóico (Ácido Fórmico):</strong> agente acidificante controlado para ajustes de pH e reações de conservantes de uso diário.</li>
               </ul>
             </div>
             <div class="panel casa-panel">
               <div class="casa-grid">
-                <div class="casa-item">Limão — ácido cítrico</div>
-                <div class="casa-item">Vinagre — ácido acético</div>
-                <div class="casa-item">Cleaners — ácido cítrico</div>
-                <div class="casa-item">Conservas — sórbico / benzóico</div>
-                <div class="casa-item">Sabão — sais de ácidos graxos</div>
-                <div class="casa-item">Cosmético — AHAs</div>
+                <div class="casa-item">Limão / Laranja — Ácido cítrico</div>
+                <div class="casa-item">Vinagre — Ácido acético (etanoico)</div>
+                <div class="casa-item">Cosméticos para Pele Oleosa — Ácido salicílico</div>
+                <div class="casa-item">Conservas e Molhos — Ácido benzoico</div>
+                <div class="casa-item">Sabão / Detergente — Ácidos graxos</div>
+                <div class="casa-item">Desincrustantes — Ácido metanoico (fórmico)</div>
               </div>
             </div>
           </div>
@@ -304,15 +308,15 @@ const numeros = [
   -webkit-text-fill-color: transparent;
 }
 
-.frente-card ul {
-  margin-top: 0.8rem;
-}
-
 .frente-head {
   display: flex;
   align-items: center;
   gap: 0.8rem;
   margin-bottom: 0.4rem;
+}
+
+.frente-head h3 {
+  font-size: 1.05rem;
 }
 
 .frente-icone {
@@ -330,8 +334,85 @@ const numeros = [
   font-size: 1rem;
 }
 
-.rota-card p {
-  font-size: 0.95rem;
+.acido-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.acido-sub {
+  margin: 0.5rem 0 0.9rem;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+.oleico-fig {
+  margin-bottom: 0.9rem;
+}
+
+.oleico-caption {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.4;
+  text-align: center;
+}
+
+ul.tag-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+ul.tag-list li {
+  display: grid;
+  grid-template-columns: 108px 1fr;
+  gap: 0.7rem;
+  align-items: start;
+  font-size: 0.86rem;
+  color: var(--text-soft);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.18rem 0.5rem;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  line-height: 1.3;
+}
+
+.tag-dom {
+  background: rgba(126, 217, 170, 0.1);
+  border: 1px solid rgba(126, 217, 170, 0.3);
+  color: var(--mint);
+}
+
+.tag-ind {
+  background: rgba(111, 178, 255, 0.1);
+  border: 1px solid rgba(111, 178, 255, 0.3);
+  color: #8fc0ff;
+}
+
+.tag-tec {
+  background: rgba(201, 182, 255, 0.1);
+  border: 1px solid rgba(201, 182, 255, 0.3);
+  color: #c9b6ff;
+}
+
+@media (max-width: 480px) {
+  ul.tag-list li {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
 }
 
 .casa-panel {
