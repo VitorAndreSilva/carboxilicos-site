@@ -137,7 +137,7 @@ const mercado = [
                 <circle cx="50" cy="50" r="40" fill="none" stroke="#6cf2b0" stroke-width="16" stroke-dasharray="40.2 251.3" stroke-dashoffset="-186" />
                 <circle cx="50" cy="50" r="40" fill="none" stroke="#8b99b0" stroke-width="16" stroke-dasharray="25.1 251.3" stroke-dashoffset="-226.2" />
               </g>
-              <text x="50" y="54" text-anchor="middle" font-size="13" font-family="'IBM Plex Mono', monospace" font-weight="600" fill="#e9eef7">55%</text>
+              <text x="50" y="54" text-anchor="middle" font-size="13" font-family="'IBM Plex Mono', monospace" font-weight="600" fill="var(--text)">55%</text>
               <text x="50" y="66" text-anchor="middle" font-size="7" font-family="'IBM Plex Mono', monospace" fill="#8b99b0">CHINA</text>
             </svg>
             <ul class="clean legend">

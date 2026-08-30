@@ -6,6 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Guia interativo sobre ácidos carboxílicos: estrutura, propriedades, história, aplicações e impacto social — Química Geral, 3º ano do Ensino Médio." />
     <meta name="theme-color" content="#070a10" />
+    <script>
+      (() => {
+        try {
+          const saved = localStorage.getItem('carboxylic-theme')
+          const theme = saved === 'light' || saved === 'dark'
+            ? saved
+            : matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+          document.documentElement.dataset.theme = theme
+          document.documentElement.style.colorScheme = theme
+          document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#070a10' : '#f4f7fb'
+        } catch (_) {
+          document.documentElement.dataset.theme = 'dark'
+        }
+      })()
+    </script>
     <title>Ácidos Carboxílicos · Guia Interativo de Química</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

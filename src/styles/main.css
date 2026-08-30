@@ -21,6 +21,12 @@
   --mint: #6cf2b0;
   --blue: #6fb2ff;
   --carbon: #a9bdd6;
+  --header-bg: rgba(7, 10, 16, 0.72);
+  --header-bg-strong: rgba(7, 10, 16, 0.9);
+  --control-bg: rgba(7, 10, 16, 0.84);
+  --control-bg-soft: rgba(7, 10, 16, 0.58);
+  --on-accent: #171006;
+  --hover-bg: rgba(255, 255, 255, 0.04);
 
   --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
@@ -33,6 +39,35 @@
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --shadow: 0 24px 60px -28px rgba(0, 0, 0, 0.85);
   --shadow-sm: 0 10px 30px -18px rgba(0, 0, 0, 0.7);
+}
+
+:root[data-theme='light'] {
+  --bg: #f4f7fb;
+  --bg-2: #eaf0f7;
+  --surface: #ffffff;
+  --surface-2: #f7f9fc;
+  --surface-3: #e4ebf4;
+  --line: rgba(36, 55, 82, 0.13);
+  --line-strong: rgba(36, 55, 82, 0.22);
+  --text: #172337;
+  --text-soft: #34455f;
+  --muted: #607089;
+  --muted-2: #75839a;
+  --amber: #a85f00;
+  --amber-2: #ce7100;
+  --amber-glow: rgba(168, 95, 0, 0.12);
+  --red: #c74238;
+  --mint: #087a4c;
+  --blue: #286fac;
+  --carbon: #657b94;
+  --header-bg: rgba(244, 247, 251, 0.78);
+  --header-bg-strong: rgba(244, 247, 251, 0.94);
+  --control-bg: rgba(255, 255, 255, 0.9);
+  --control-bg-soft: rgba(255, 255, 255, 0.72);
+  --on-accent: #fffaf0;
+  --hover-bg: rgba(36, 55, 82, 0.07);
+  --shadow: 0 24px 60px -30px rgba(31, 49, 76, 0.28);
+  --shadow-sm: 0 10px 30px -18px rgba(31, 49, 76, 0.24);
 }
 
 * {
@@ -52,6 +87,7 @@ body {
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 ::selection {
@@ -200,7 +236,7 @@ strong {
 
 .btn-primary {
   background: linear-gradient(135deg, var(--amber), var(--amber-2));
-  color: #171006;
+  color: var(--on-accent);
   box-shadow: 0 12px 34px -12px rgba(255, 168, 46, 0.55);
 }
 
@@ -571,14 +607,14 @@ table.tbl {
   inset: 0 0 auto 0;
   z-index: 60;
   backdrop-filter: blur(14px);
-  background: rgba(7, 10, 16, 0.72);
+  background: var(--header-bg);
   border-bottom: 1px solid transparent;
   transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .site-header.is-scrolled {
   border-bottom-color: var(--line);
-  background: rgba(7, 10, 16, 0.88);
+  background: var(--header-bg-strong);
   box-shadow: 0 12px 40px -20px rgba(0, 0, 0, 0.7);
 }
 
@@ -640,7 +676,7 @@ table.tbl {
 
 .nav-link:hover {
   color: var(--text);
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--hover-bg);
 }
 
 .nav-link.router-link-active {
@@ -657,7 +693,35 @@ table.tbl {
   display: none;
 }
 
-@media (max-width: 940px) {
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.theme-toggle {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  background: var(--surface-2);
+  color: var(--text-soft);
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  border-color: var(--amber);
+  color: var(--amber);
+  outline: none;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 1050px) {
   .nav-toggle {
     display: grid;
     place-items: center;
@@ -678,7 +742,7 @@ table.tbl {
     align-items: stretch;
     gap: 0.2rem;
     padding: 1rem 4vw 1.4rem;
-    background: rgba(10, 15, 24, 0.97);
+    background: var(--header-bg-strong);
     backdrop-filter: blur(18px);
     border-bottom: 1px solid var(--line);
     opacity: 0;
@@ -696,6 +760,32 @@ table.tbl {
   .nav-link {
     padding: 0.85rem 0.9rem;
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .header-inner {
+    gap: 0.45rem;
+  }
+
+  .brand {
+    gap: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .brand small {
+    display: none;
+  }
+
+  .header-actions {
+    gap: 0.35rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body,
+  .theme-toggle {
+    transition: none;
   }
 }
 
