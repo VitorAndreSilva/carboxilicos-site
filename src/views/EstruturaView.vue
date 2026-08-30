@@ -2,6 +2,7 @@
 import { ref, computed } from 'vue'
 import PageHero from '../components/PageHero.vue'
 import Molecule from '../components/Molecule.vue'
+import MoleculeShowcase from '../components/MoleculeShowcase.vue'
 import Reveal from '../components/Reveal.vue'
 
 /* ---------- figuras moleculares ---------- */
@@ -183,6 +184,22 @@ const peBars = serial.map((s) => ({ nome: s.nome, c: s.c, bp: s.bp }))
               </p>
             </div>
           </div>
+        </Reveal>
+      </div>
+    </section>
+
+    <section class="section" style="border-top: 1px solid var(--line)">
+      <div class="container split" style="align-items: center">
+        <Reveal>
+          <div>
+            <p class="kicker">Da fórmula ao espaço</p>
+            <h2>Compare a carboxila em <span class="grad-text">2D e 3D</span></h2>
+            <p class="lead">A fórmula 2D evidencia as ligações; o modelo 3D revela geometria, volume e orientação. Use as duas leituras juntas para entender o ácido acético.</p>
+            <ul class="clean tick"><li>No 2D, localize C=O e O–H.</li><li>No 3D, gire o modelo e identifique os dois oxigênios.</li><li>Alterne entre bastões e modelo espacial para comparar ligação e volume.</li></ul>
+          </div>
+        </Reveal>
+        <Reveal :delay="100">
+          <MoleculeShowcase :atoms="[{x:8,y:45,el:'H'},{x:28,y:45,el:'C'},{x:28,y:22,el:'H'},{x:28,y:68,el:'H'},{x:72,y:45,el:'C'},{x:100,y:26,el:'O'},{x:96,y:70,el:'O'},{x:112,y:82,el:'H'}]" :bonds="[[0,1],[1,2],[1,3],[1,4],[4,5,2],[4,6],[6,7]]" view="0 0 130 95" :scale=".95" name="Ácido acético" has3d molecule-path="molecules/acetic-acid.sdf" formula="C₂H₄O₂" :atom-counts="{C:2,O:2,H:4}" />
         </Reveal>
       </div>
     </section>
@@ -506,7 +523,7 @@ const peBars = serial.map((s) => ({ nome: s.nome, c: s.c, bp: s.bp }))
                   <line x1="118" y1="88" x2="228" y2="52" stroke="var(--amber)" stroke-width="1.6" stroke-dasharray="5 5" />
                   <line x1="202" y1="88" x2="92" y2="50" stroke="var(--amber)" stroke-width="1.6" stroke-dasharray="5 5" />
 
-                  <g font-size="12" font-family="'IBM Plex Mono', monospace" fill="#e9eef7" font-weight="600">
+                  <g font-size="12" font-family="'IBM Plex Mono', monospace" fill="var(--text)" font-weight="600">
                     <text x="80" y="42" text-anchor="middle">C=O</text>
                     <text x="240" y="42" text-anchor="middle">C=O</text>
                     <text x="108" y="112" text-anchor="middle">O–H</text>

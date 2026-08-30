@@ -33,6 +33,18 @@ const routes = [
     meta: { index: 4, title: 'Aplicações & Usos' },
   },
   {
+    path: '/aplicacoes/acido-latico',
+    name: 'acido-latico',
+    component: () => import('./views/AcidoLaticoView.vue'),
+    meta: { index: 4, title: 'Ácido Lático' },
+  },
+  {
+    path: '/aplicacoes/:slug',
+    name: 'perfil-acido',
+    component: () => import('./views/AcidProfileView.vue'),
+    meta: { index: 4, title: 'Perfil molecular' },
+  },
+  {
     path: '/sociedade',
     name: 'sociedade',
     component: () => import('./views/SociedadeView.vue'),
@@ -50,8 +62,11 @@ const router = createRouter({
 })
 
 router.afterEach((to) => {
-  document.title = to.meta.title
-    ? `${to.meta.title} · Ácidos Carboxílicos`
+  const profileTitle = to.name === 'perfil-acido'
+    ? to.params.slug.replace('acido-', 'Ácido ').replaceAll('-', ' ')
+    : to.meta.title
+  document.title = profileTitle
+    ? `${profileTitle} · Ácidos Carboxílicos`
     : 'Ácidos Carboxílicos · Guia Interativo de Química'
 })
 
