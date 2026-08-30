@@ -50,6 +50,12 @@ const routes = [
     component: () => import('./views/SociedadeView.vue'),
     meta: { index: 5, title: 'Sociedade & Comércio' },
   },
+  {
+    path: '/referencias',
+    name: 'referencias',
+    component: () => import('./views/ReferenciasView.vue'),
+    meta: { index: 6, title: 'Referências' },
+  },
 ]
 
 const router = createRouter({

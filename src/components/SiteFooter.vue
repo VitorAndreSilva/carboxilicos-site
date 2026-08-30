@@ -5,6 +5,7 @@ const eixos = [
   { to: '/importancia', label: 'Importância tecnológica, industrial e doméstica' },
   { to: '/aplicacoes', label: 'Aplicações & usos' },
   { to: '/sociedade', label: 'Sociedade · ambiente · comércio' },
+  { to: '/referencias', label: 'Referências' },
 ]
 </script>
 
