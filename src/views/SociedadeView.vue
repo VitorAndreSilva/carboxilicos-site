@@ -34,12 +34,12 @@ const impacto = [
 ];
 
 const cadeia = [
-  { pass: "Matéria-prima", d: "biomassa, açúcar, petróleo, gás natural" },
-  { pass: "Transformação", d: "fermentação microbiana ou rota química" },
-  { pass: "Purificação", d: "refino, grau alimentício/farmacêutico" },
-  { pass: "Formulação", d: "acidulantes, conservantes, polímeros, sais" },
-  { pass: "Consumo", d: "alimentos, medicamentos, cosméticos, limpeza" },
-  { pass: "Resíduo", d: "efluente tratado, reciclagem, biodegradação" },
+  { pass: "Matéria-prima", d: "petróleo, gás natural, cana-de-açúcar, milho, óleos vegetais e resíduos agroindustriais" },
+  { pass: "Transformação", d: "síntese química, oxidação de compostos orgânicos ou fermentação por microrganismos" },
+  { pass: "Purificação", d: "separação, concentração e obtenção do ácido com o grau de pureza necessário" },
+  { pass: "Processamento", d: "transformação e preparação para diferentes setores da indústria" },
+  { pass: "Consumo", d: "alimentos, medicamentos, cosméticos, plásticos, tintas, sabões, têxteis e agricultura" },
+  { pass: "Pós-consumo", d: "tratamento de efluentes, reciclagem, reaproveitamento ou biodegradação" },
 ];
 
 const leis = [
@@ -113,28 +113,28 @@ const tratados = [
 
 const mercado = [
   {
-    produto: "Ácido acético",
-    dado: "US$ 18 bi (2025) · ~21 Mt/ano",
-    lider: "Ásia-Pacífico (~57%)",
-    players: "Celanese, BP, LyondellBasell, Daicel",
+    produto: "Ácidos carboxílicos",
+    dado: "US$ 17,3 bi (2025) → US$ 27,1 bi (2035)",
+    lider: "América do Norte e Ásia-Pacífico",
+    players: "BASF, Celanese, Dow, Eastman",
   },
   {
-    produto: "Ácido cítrico",
-    dado: "US$ 2,5–2,9 bi · 70% para alimentos",
-    lider: "China (~55% da capacidade)",
-    players: "RZBC, TTCA, ADM, Jungbunzlauer",
+    produto: "Mercado global",
+    dado: "Crescimento de 4,59% ao ano",
+    lider: "Ásia-Pacífico em expansão",
+    players: "Sasol, INEOS, LG Chem, Arkema",
   },
   {
-    produto: "Ácido lático / PLA",
-    dado: "Bioeconomia em alta",
+    produto: "Produção química",
+    dado: "Mercado internacional em expansão",
+    lider: "Forte presença industrial na Ásia",
+    players: "ExxonMobil, LyondellBasell, Evonik",
+  },
+  {
+    produto: "Ácidos de base biológica",
+    dado: "Segmento em crescimento",
     lider: "Europa e Ásia-Pacífico",
-    players: "NatureWorks, TotalEnergies-Corbion",
-  },
-  {
-    produto: "Ácidos graxos",
-    dado: "Base de sabões, cosméticos e biodiesel",
-    lider: "Mundo inteiro (deixa a agricultura global)",
-    players: "Integradores de óleos e gorduras",
+    players: "Empresas químicas e biotecnológicas",
   },
 ];
 
@@ -191,7 +191,7 @@ const quimicaVerdeTendencias = [
       eixo="Eixo 05 · 05/05"
       kicker="Química com contexto"
       title="Sociedade · Ambiente · Cadeias & Comércio"
-      lead="Vinagre pode ser natural e ainda assim agredir um rio em excesso. Ácido cítrico move bilhões de dólares e depende de cadeias globais. Leis, tratados e metas de descarbonização enquadram essa química — do Brasil ao mundo."
+      lead="Presentes na natureza e no cotidiano, os ácidos carboxílicos contribuem para a alimentação, saúde e qualidade de vida. Podem ajudar na segurança e conservação dos alimentos, mas seu uso exige controle, pois concentrações inadequadas e exposições incorretas podem trazer riscos."
       :chips="[
         'Impacto ambiental',
         'Cadeia produtiva',
@@ -363,9 +363,9 @@ const quimicaVerdeTendencias = [
               A cadeia produtiva <span class="grad-text">em seis elos</span>
             </h2>
             <p class="lead">
-              Ácidos carboxílicos conectam agricultura, biotecnologia, indústria
-              química e a mesa do consumidor — terminando em efluentes,
-              reciclagem ou biodegradação.
+              Dos recursos naturais à indústria, os ácidos carboxílicos passam
+              por diferentes etapas até chegarem aos produtos consumidos pela
+              sociedade.
             </p>
           </div>
         </Reveal>
@@ -393,9 +393,11 @@ const quimicaVerdeTendencias = [
             <p class="kicker">Comércio global</p>
             <h2>Números que <span class="grad-text">impressionam</span></h2>
             <p class="lead">
-              A Ásia-Pacífico domina a oferta; Europa e América do Norte puxam a
-              demanda. A China é o maior exportador mundial de ácido cítrico
-              (mais de US$ 1 bilhão anuais em exportações, segundo a OEC).
+              O mercado global de ácidos carboxílicos foi estimado em US$ 17,3
+              bilhões em 2025 e pode chegar a US$ 27,1 bilhões até 2035. A
+              Ásia-Pacífico se destaca pelo crescimento acelerado, enquanto
+              América do Norte e Europa permanecem importantes mercados
+              consumidores.
             </p>
           </div>
         </Reveal>
@@ -428,38 +430,37 @@ const quimicaVerdeTendencias = [
         <div class="grid grid-2" style="margin-top: 1.6rem">
           <Reveal :delay="80">
             <div class="card">
-              <p class="panel-label">Setores consumidores</p>
+              <p class="panel-label">Um mercado mundial</p>
               <div class="chips-row">
                 <span v-for="s in setores" :key="s" class="chip">{{ s }}</span>
               </div>
               <p class="small" style="margin-top: 0.9rem">
-                Todos os continentes compram e vendem ácidos carboxílicos —
-                alimentos processados, bebidas, detergentes, fármacos e
-                polímeros movimentam o comércio.
+                A produção e o consumo de ácidos carboxílicos estão distribuídos
+                internacionalmente. Empresas de diferentes países participam
+                dessa cadeia, conectando produção química, comércio, indústria e
+                consumidores.
               </p>
             </div>
           </Reveal>
           <Reveal :delay="160">
             <div class="card">
               <p class="panel-label">E o Brasil?</p>
+              <p class="small" style="margin: 0 0 0.7rem">
+                O Brasil também participa desse mercado global. Em 2024, foram
+                importadas cerca de <strong>56 mil toneladas</strong> de ácidos
+                carboxílicos, movimentando aproximadamente
+                <strong>US$ 237 milhões</strong>.
+              </p>
               <ul class="clean tick">
-                <li>
-                  Demanda atendida em parte por <strong>importações</strong> de
-                  ácido cítrico.
-                </li>
-                <li>
-                  Trunfo renovável: <strong>etanol de cana</strong> como rota
-                  bio para o ácido acético.
-                </li>
-                <li>
-                  <strong>Biodiesel de soja</strong>: ésteres de ácidos graxos
-                  na matriz nacional (Lei 11.097/05; RenovaBio).
-                </li>
-                <li>
-                  Agroindústria e química fina geram
-                  <strong>emprego e renda</strong> na cadeia.
-                </li>
+                <li><strong>China</strong> → 50% do volume importado</li>
+                <li><strong>Índia</strong> → 2º maior fornecedor</li>
+                <li><strong>Estados Unidos</strong> → 3º maior fornecedor</li>
               </ul>
+              <p class="small" style="margin-top: 0.7rem">
+                Os dados mostram como o mercado brasileiro está conectado ao
+                comércio internacional, com parte da demanda nacional sendo
+                atendida por fornecedores estrangeiros.
+              </p>
             </div>
           </Reveal>
         </div>
