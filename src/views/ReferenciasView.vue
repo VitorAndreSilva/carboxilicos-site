@@ -93,6 +93,38 @@ const grupos = [
     ],
   },
   {
+    id: 'aplicacoes',
+    titulo: 'Aplicações e processos',
+    icone: 'apl',
+    descricao: 'Fontes para as relações entre propriedade química, pH, conservação, metabolismo, cosméticos, polímeros e usos cotidianos.',
+    refs: [
+      { url: 'https://www.gov.br/anvisa/pt-br/assuntos/fiscalizacao-e-monitoramento/programas-nacionais-de-monitoramento-de-alimentos/monitoramento-de-aditivos-e-contaminantes-em-alimentos/relatorio-do-programa-de-monitoramento-de-aditivos-e-contaminantes-em-alimentos-2021-a-2023_compressed.pdf', titulo: 'Ácido benzoico e aditivos alimentares — Anvisa' },
+      { url: 'https://www.infoteca.cnptia.embrapa.br/infoteca/bitstream/doc/1005850/1/cot1001.pdf', titulo: 'Biomateriais: propriedades e aplicações do PLA — Embrapa' },
+      { url: 'https://www.embrapa.br/en/web/agencia-de-informacao-tecnologica/tematicas/agroenergia/biodiesel/tecnologia/transesterificacao', titulo: 'Transesterificação e produção de biodiesel — Embrapa' },
+      { url: 'https://atin.icb.usp.br/inicio/topicos/membranas/', titulo: 'Membranas celulares, fosfolipídios e ácidos graxos — USP' },
+      { url: 'https://repositorio.usp.br/item/001367993', titulo: 'Ácidos graxos: funções biológicas e membranas — USP' },
+      { url: 'https://chem.libretexts.org/Bookshelves/Organic_Chemistry/Basic_Principles_of_Organic_Chemistry_%28Roberts_and_Caserio%29/18%3A_Carboxylic_Acids_and_Their_Derivatives/18.02%3A_Physical_Properties_of_Carboxylic_Acids', titulo: 'Physical Properties of Carboxylic Acids — Chemistry LibreTexts' },
+      { url: 'https://www.fao.org/4/y4358e/y4358e06.htm', titulo: 'Preservation of fruit and vegetables: organic acids — FAO' },
+      { url: 'https://www.fda.gov/cosmetics/cosmetic-ingredients/alpha-hydroxy-acids', titulo: 'Alpha Hydroxy Acids em cosméticos — FDA' },
+      { url: 'https://www.ncbi.nlm.nih.gov/books/NBK544346/', titulo: 'Gluconeogenesis e ciclo de Cori — NCBI Bookshelf' },
+      { url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC9229942/', titulo: 'Ácido polilático: propriedades, aplicações e fim de vida.' },
+    ],
+  },
+  {
+    id: 'dados-modelos',
+    titulo: 'Dados moleculares e visualização',
+    icone: 'dat',
+    descricao: 'Bases consultadas para fórmulas, estruturas moleculares e construção dos modelos interativos em 2D e 3D.',
+    refs: [
+      { url: 'https://pubchem.ncbi.nlm.nih.gov/compound/284', titulo: 'Ácido fórmico — PubChem CID 284' },
+      { url: 'https://pubchem.ncbi.nlm.nih.gov/compound/176', titulo: 'Ácido acético — PubChem CID 176' },
+      { url: 'https://pubchem.ncbi.nlm.nih.gov/compound/311', titulo: 'Ácido cítrico — PubChem CID 311' },
+      { url: 'https://pubchem.ncbi.nlm.nih.gov/compound/612', titulo: 'Ácido lático — PubChem CID 612' },
+      { url: 'https://pubchem.ncbi.nlm.nih.gov/compound/243', titulo: 'Ácido benzoico — PubChem CID 243' },
+      { url: 'https://pubchem.ncbi.nlm.nih.gov/compound/985', titulo: 'Ácido palmítico — PubChem CID 985' },
+    ],
+  },
+    {
     id: "sociedade",
     titulo: "Sociedade",
     icone: "soc",
@@ -117,7 +149,7 @@ const grupos = [
       },
     ],
   },
-];
+]
 </script>
 
 <template>
@@ -126,8 +158,8 @@ const grupos = [
       eixo="Referências"
       kicker="Fontes consultadas · por assunto"
       title="Referências do Guia"
-      lead="Todas as fontes que embasaram o conteúdo deste site, organizadas pelos três grandes temas: estrutura, importância e histórico."
-      :chips="['Estrutura', 'Importância', 'Histórico', 'Fontes confiáveis']"
+      lead="Fontes que embasaram o conteúdo do site, organizadas por estrutura, importância, histórico, aplicações e dados moleculares."
+      :chips="['Estrutura', 'Importância', 'Histórico', 'Aplicações', 'Dados moleculares']"
     />
 
     <section class="section">
@@ -207,9 +239,11 @@ const grupos = [
           <div class="panel card-amber">
             <div class="ref-foot">
               <p style="margin: 0">
-                <strong>Nota:</strong> os endereços foram verificados durante a
-                elaboração do material. Alguns links podem sofrer alterações de
-                URL pelas instituições mantenedoras.
+                <strong>Nota:</strong> os endereços foram verificados durante a elaboração do material.
+                Alguns links podem sofrer alterações de URL pelas instituições mantenedoras. As
+                ilustrações identificadas nos cards do ácido lático foram geradas com inteligência
+                artificial pela OpenAI; os modelos moleculares interativos usam estruturas do
+                PubChem e visualização baseada em 3Dmol.js.
               </p>
             </div>
           </div>
@@ -271,6 +305,18 @@ const grupos = [
   background: rgba(126, 217, 168, 0.14);
   color: var(--mint);
   border: 1px solid rgba(126, 217, 168, 0.35);
+}
+
+.ref-badge--apl {
+  background: rgba(255, 112, 102, 0.14);
+  color: #ff8a82;
+  border: 1px solid rgba(255, 112, 102, 0.35);
+}
+
+.ref-badge--dat {
+  background: rgba(177, 139, 255, 0.14);
+  color: #c1a4ff;
+  border: 1px solid rgba(177, 139, 255, 0.35);
 }
 
 .ref-list {
