@@ -12,24 +12,24 @@ const setores = [
 
 const impacto = [
   {
-    titulo: "Natural ≠ inócuo",
+    titulo: "Origem natural e humana",
     texto:
-      "Ser “natural” não torna uma substância inofensiva: ácido de frutas em alta dose (ex.: oxálico) é tóxico. O efeito depende da substância, da concentração, da quantidade, da exposição e do organismo afetado.",
+      "Os ácidos carboxílicos podem ter origem natural ou antropogênica. O ácido fórmico (HCOOH), por exemplo, é encontrado naturalmente na atmosfera, enquanto a queima de combustíveis e de biomassa contribui para sua presença no ambiente.",
   },
   {
-    titulo: "Oxigênio nos rios",
+    titulo: "Atmosfera e acidez",
     texto:
-      "Lançamentos de ácidos orgânicos elevam a demanda bioquímica de oxigênio (DBO): a degradação microbiana consome O₂ dissolvido e pode sufocar ecossistemas aquáticos — problema típico de efluentes alimentícios.",
+      "Na atmosfera, esses compostos estão presentes no ar, na chuva, na neve, no gelo e em partículas. Podem representar 16% a 35% da acidez livre da chuva em áreas urbanas e cerca de 65% em áreas remotas, contribuindo para acidificação e corrosão de metais.",
   },
   {
-    titulo: "pH e ecossistemas",
+    titulo: "Produção e resíduos",
     texto:
-      "Acidificação local de corpos d’água altera a vida aquática. Mesmo em baixas concentrações, descarte contínuo muda o equilíbrio — daí o controle de efluentes industriais.",
+      "A produção tradicional depende da indústria petroquímica, mas alternativas que utilizam resíduos agroindustriais e matérias-primas renováveis vêm sendo estudadas para reduzir impactos ambientais e a dependência do petróleo.",
   },
   {
-    titulo: "O ciclo de vida importa",
+    titulo: "Química verde",
     texto:
-      "PLA e PET são ácidos “aplicados” (polilático e tereftálico): o plástico biodegradável (PLA) só degrada em condições adequadas, e o PET é reciclável — a história do resíduo é parte do impacto.",
+      "Processos biológicos, como a produção por digestão anaeróbia de resíduos orgânicos, aproveitam descartes e utilizam recursos renováveis de baixo custo, aproximando a produção dos princípios da química verde.",
   },
 ];
 
@@ -318,15 +318,14 @@ const quimicaVerdeTendencias = [
           <div class="section-head">
             <p class="kicker">Impactos ambientais</p>
             <h2>
-              “É natural, logo é inofensivo”?
-              <span class="grad-text">Cuidado.</span>
+              Do ciclo natural à
+              <span class="grad-text">ação humana</span>
             </h2>
             <p class="lead">
-              O impacto de um ácido carboxílico no ambiente depende de
-              <strong>qual</strong> é, da <strong>concentração</strong>, da
-              quantidade liberada, do tempo de exposição, do organismo afetado e
-              da capacidade de degradação. Contexto é tudo — “a dose faz o
-              veneno”.
+              O impacto ambiental dos ácidos carboxílicos depende de sua
+              <strong>origem</strong>, <strong>concentração</strong>,
+              quantidade liberada e destino no ambiente. Eles participam de
+              processos naturais, mas também são emitidos por atividades humanas.
             </p>
           </div>
         </Reveal>
@@ -343,12 +342,11 @@ const quimicaVerdeTendencias = [
         <Reveal :delay="140">
           <div class="panel card-amber" style="margin-top: 2rem">
             <p style="margin: 0">
-              <strong>Contra-exemplo de sala:</strong> o espinafre contém ácido
-              oxálico (HOOC–COOH) — “natural”, presente em legumes — e ainda
-              assim, em excesso, precipita oxalato de cálcio e pode contribuir
-              para cálculos renais. Da mesma forma, um composto sintético pode
-              ser seguro nas condições controladas de uma fábrica. A avaliação é
-              sempre <em>caso a caso</em>.
+              <strong>Conclusão:</strong> os impactos ambientais dos ácidos
+              carboxílicos dependem de todo o seu ciclo de vida. O uso de fontes
+              renováveis, o tratamento adequado de resíduos e a redução de
+              emissões são caminhos para tornar sua produção e utilização mais
+              segura e sustentável.
             </p>
           </div>
         </Reveal>
