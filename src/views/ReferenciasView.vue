@@ -90,6 +90,29 @@ const grupos = [
         url: "https://www.products.pcc.eu/pt/blog/acido-acetico-propriedades-e-aplicacoes-unicas/",
         titulo: "Ácido acético — propriedades e aplicações únicas",
       },
+      { url: 'https://chem.libretexts.org/Bookshelves/Organic_Chemistry/Organic_Chemistry_(Morsch_et_al.)/20%3A_Carboxylic_Acids_and_Nitriles/20.00%3A_Chapter_Objectives_and_Introduction_to_Carboxylic_Acids', titulo: 'Objetivos do Capítulo e Introdução aos Ácidos Carboxílicos' },
+      { url: 'https://brasilescola.uol.com.br/quimica/Acido-acetico.htm', titulo: 'Ácido acético' },
+      { url: 'https://mundoeducacao.uol.com.br/historiageral/sumerios.htm', titulo: 'Súmerios' },
+      { url: 'https://womersleyfoods.com/pages/a-short-history-of-vinegar', titulo: 'História do Vinagre' },
+      { url: 'https://ahistoriadasplantas.com.br/vinagre/', titulo: 'A História do Vinagre' },
+      { url: 'https://www.youtube.com/watch?v=vQEjoQ2VqpU&t=16s', titulo: 'Babilônia, Suméria e Fenícia' },
+      { url: 'https://www.vinegar-brewers-federation-uk.org/history', titulo: 'História do Vinagre' },
+      { url: 'https://www5.pucsp.br/maturidades/sabor_saber/vinagre.html', titulo: 'O Mais Nobre Derivado do Vinho' },
+      { url: 'https://pt.wikipedia.org/wiki/Jabir_ibne_Haiane', titulo: 'Jabir ibne Haiane' },
+      { url: 'https://pt.wikipedia.org/wiki/%C3%81cido_c%C3%ADtrico', titulo: 'Ácido Cítrico' },
+      { url: 'https://guides.hostos.cuny.edu/che120/chapter4', titulo: 'Introdução à Química Orgânica' },
+      { url: 'https://explorable.com/islamic-alchemy', titulo: 'Alquimia Islâmica' },
+      { url: 'https://pt.wikipedia.org/wiki/S%C3%A9culo', titulo: 'Século' },
+      { url: 'https://pt.wikipedia.org/wiki/Antoine_Lavoisier', titulo: 'Antoine Lavoisier' },
+      { url: 'https://translate.google.com/translate?u=https://explorable.com/acids-and-bases&hl=pt&sl=en&tl=pt&client=sge', titulo: 'Ácidos e Bases' },
+      { url: 'https://revistas.pucsp.br/index.php/hcensino/article/download/57601/40045/181789', titulo: 'A definição ácido-base de Arrhenius dos livros-textos de química: a história de um obstáculo epistemológico e suas consequências para o ensino-aprendizagem' },
+      { url: 'https://priya39sspace.quora.com/In-1845-which-German-chemist-published-a-method-for-the-synthesis-of-acetic-acid-a-natural-product-containing-two-carb', titulo: 'Informação e tecnologia científica' },
+      { url: 'https://querobolsa.com.br/enem/quimica/quimica-organica', titulo: 'Química Orgânica' },
+      { url: 'https://www.letstalkacademy.com/first-organic-acid-produced-industrially/', titulo: 'O Primeiro Ácido Orgânico Produzido Industrialmente: Uma Perspectiva Histórica' },
+
+
+
+
     ],
   },
   {

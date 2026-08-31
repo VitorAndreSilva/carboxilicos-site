@@ -112,8 +112,9 @@ const marcos = [
           <div class="stamp">1784</div>
           <Molecule :atoms="acetico.atoms" :bonds="acetico.bonds" view="0 0 130 100" :scale="0.95" />
           <div class="caption">
-            <b>Ácido acético</b> — conhecido na prática há milênios,
-            <br />entendido estruturalmente só no século XIX
+            <b>Ácido acético</b>
+            <br/>
+            <b>Imagem ilustrativa gerada por IA · OpenAI, 2026</b>
           </div>
         </div>
       </template>

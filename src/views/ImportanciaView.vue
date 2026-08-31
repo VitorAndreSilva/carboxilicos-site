@@ -134,7 +134,7 @@ const acidos = [
   },
   {
     icone: 'Gr',
-    nome: 'Ácido Oleico (Ômega 9)',
+    nome: 'Ácido Graxo',
     molecula: acidoOleico,
     formula: 'C₁₈H₃₄O₂',
     nomeSistematico: 'ácido (9Z)-octadec-9-enoico',
@@ -142,7 +142,7 @@ const acidos = [
     escala: 0.55,
     moleculePath: 'molecules/oleic-acid.sdf',
     atomCounts: { C: 18, O: 2, H: 34 },
-    sub: 'Encontrado em óleos vegetais, é um ácido graxo de cadeia longa com uma insaturação cis',
+    sub: 'Encontrado em óleos vegetais',
     domestica: 'O ácido oleico e seus derivados aparecem em óleos, sabões e formulações de limpeza; seus sais ajudam a dispersar gorduras em água.',
     industrial: 'É empregado na produção de tensoativos, lubrificantes, tintas, plastificantes e derivados oleoquímicos.',
     tecnologica: 'Seus derivados podem integrar emulsões cosméticas, sistemas farmacêuticos e matérias-primas para transformações químicas.',
