@@ -28,65 +28,56 @@ const acetico = {
 const eras = [
   {
     era: 'Antiguidade',
-    range: 'até ~ século IV a.C.',
-    title: 'O vinagre antes da Química',
-    text: 'Culturas antigas fermentavam vinho e o deixavam azedar — obtendo vinagre por ação de bactérias acéticas. Usavam-no para conservar alimentos, temperar, produzir bebidas e limpar. Não sabiam que a acidez vinha do ácido acético: era conhecimento empírico, transmitido pela prática.',
-    points: ['Conservação de alimentos', 'Condimento e bebida', 'Uso como agente de limpeza'],
+    range: '5.000 a.C.',
+    title: 'O ERRO, O VINHO, O USOS:',
+    text: 'Não há clareza em relação ao descobrimento do vinagre, porém, conta-se que a descoberta por fermentação foi feita pelos judeus quando transportavam vinho da Mesopotâmia para Israel, mas que os babilônios já usavam o vinagre feito do sumo da tamareira, e que esses, foram fortemente influenciados pelos sumérios que acredita-se que também já utilizavam-o. ',
+    points: ['Conservação de alimentos', 'Bebida', 'Produto de limpeza'],
     tag: 'empírico',
   },
   {
-    era: 'Alquimia · Idade Média',
-    range: 'séculos XII–XVII',
-    title: 'Concentrar o “espírito do vinagre”',
-    text: 'Alquimistas concentraram o vinagre por destilação, obtendo um líquido forte e ácido (conhecido no ocidente como “espírito de vinagre”, próximo do ácido acético glacial). Pela primeira vez o composto era isolado de forma mais pura — ainda sem compreensão de estrutura.',
-    points: ['Destilação e concentração', 'Primeiro ácido carboxílico “puro” da história'],
+    era: 'Alquimia',
+    range: 'século VIII',
+    title: 'Concentração',
+    text: 'O alquimista islâmico Jabir ibne Haine (nome latino: Geber),conhecido também como pai da química árabe, descobriu o ácido cítrico',
+    points: ['Descoberta do ácido cítrico'],
     tag: 'técnica',
   },
   {
     era: 'Século XVIII',
-    range: '1780–1784',
-    title: 'Scheele isola os ácidos',
-    text: 'O químico sueco Carl Wilhelm Scheele isolou uma série de ácidos orgânicos de fontes naturais: cítrico (do suco de limão, 1784), além de málico, tartárico, oxálico e lático. Isolar uma substância era o primeiro passo para entender o que ela era.',
-    points: ['Ácido cítrico (limão)', 'Ácido lático (leite azedo)', 'Ácido oxálico (azedinha)'],
+    range: '1784',
+    title: 'Cristalização',
+    text: 'O químico sueco Carl Wilhelm Scheele isolou - pela primeira vez - o ácido cítrico por meio do suco de limão',
+    points: ['Ácido cítrico (limão)'],
     tag: 'isolamento',
   },
   {
-    era: 'Século XIX',
-    range: '1828 · 1838 · 1845 · 1858',
-    title: 'Nasce a química orgânica',
-    text: 'Berzelius cunha o termo “química orgânica”. Wöhler obtém uréia aquecendo cianato de amônio — um composto “orgânico” fora de um ser vivo, golpe no vitalismo. Liebig consolida a química dos ácidos; Kolbe realiza a síntese total do ácido acético (1845) a partir de elementos, e Kekulé estrutura a teoria da ligação química.',
+    era: 'Século XVIII e XIX',
+    range: '1776 · 1777 · 1845',
+    title: 'Avanços',
+    text: 'No ano de 1776, Antoine-Laurent de Lavoisier, foi o primeiro a tentar explicar propriedades ácidas de forma mais concreta. O termo química orgânica foi usado em 1777 pela primeira vez pelo químico sueco Torbern Olof Bergman. Depois, em 1845, o químico alemão Hermann Kolbe sintetizou o ácido acético, o que mostrou ser possível sintetizar compostos orgânicos complexos por meio de compostos mais simples .',
     points: [
-      'Wöhler (1828): uréia em laboratório',
-      'Liebig: teoria dos radicais e dos ácidos',
+      'Lavoisier (1776) tentou explicar os ácidos',
+      'Bergman (1777): Termo "química orgânica"',
       'Kolbe (1845): síntese do ácido acético',
-      'Kekulé (1858): valência e estrutura',
     ],
     tag: 'teoria',
   },
   {
-    era: 'Século XX',
-    range: '1897 · 1919 · 1960–70',
-    title: 'Da bancada à escala industrial',
-    text: 'A aspirina (ácido acetilsalicílico) entra no mercado em 1899, nascida da acetilação do ácido salicílico. A fermentação do ácido cítrico com o fungo Aspergillus niger se torna processo industrial (Pfizer, 1919). E a carbonilação do metanol — rota da Monsanto/BASF — transforma o ácido acético em commodity química mundial.',
+    era: 'Século XIX e XX',
+    title: 'Voltando as origens',
+    text: 'O primeiro ácido orgânico a ser industrializado foi o ácido acético - o famoso vinagre -. Sendo fabricado industrialmente por meio fermentação do etanol, sendo uma fermentação bacteriana. Com o avanço tecnológico, o processo começou a ser sintético, sendo realizado por meio da carbonilação do metanol.', 
     points: [
-      'Aspirina: do ácido salicílico (1897/99)',
-      'Fungo A. niger para o ácido cítrico (1919)',
-      'Carbonilação do metanol (1960–1970)',
+      'Ácido acético',
+      'Fermentação',
+      'Vinagre',
+      'Carbonilação do metanol',
     ],
     tag: 'indústria',
   },
-  {
-    era: 'Século XXI',
-    range: 'hoje',
-    title: 'Química verde e biorrefinarias',
-    text: 'Ácidos carboxílicos se tornam peças-chave de bioeconomia: fermentação microbiana de açúcares, ácido polilático (PLA) biodegradável, polímeros de origem renovável e rotas “bio” para o ácido acético — conectando química, sustentabilidade e mercado.',
-    points: ['PLA e bioplásticos', 'Rota do etanol (Brasil)', 'Fermentação industrial moderna'],
-    tag: 'bioeconomia',
-  },
-]
+  ]
 
 const avanco = [
-  { n: '1', t: 'Identificar', d: 'reconhecer a substância' },
+  { n: '1', t: 'Identificar', d: 'reconhecer a substância' }, 
   { n: '2', t: 'Determinar composição', d: 'quais elementos e quantos' },
   { n: '3', t: 'Compreender estrutura', d: 'como os átomos se ligam' },
   { n: '4', t: 'Estudar propriedades', d: 'comportamento químico e físico' },
@@ -95,12 +86,14 @@ const avanco = [
 ]
 
 const marcos = [
-  { ano: '1784', feito: 'Carl Scheele isola o ácido cítrico do limão' },
-  { ano: '1828', feito: 'Wöhler sintetiza uréia em laboratório' },
-  { ano: '1845', feito: 'Kolbe sintetiza o ácido acético a partir de elementos' },
-  { ano: '1899', feito: 'Bayer lança a aspirina (acetilação do ácido salicílico)' },
-  { ano: '1919', feito: 'Fermentação industrial do ácido cítrico (Aspergillus niger)' },
-  { ano: '1960–70', feito: 'Carbonilação do metanol industrializa o ácido acético' },
+  { ano: '5000 a.C.', feito: 'Comunidades antigas já usavam o ácido acético, o vinagre.' },
+  { ano: 'Século VIII', feito: 'Geber descobriu o ácido cítrico.' },
+  { ano: '1784', feito: 'Scheele isolou o ácido cítrico.' },
+  { ano: '1776', feito: 'Lavoisier estuda profundamente os ácidos.' },
+  { ano: '1777', feito: 'Bergman usa o termo "química orgânica".' },
+  { ano: '1845', feito: 'Kolbe sintetiza o ácido acético.' },
+  { ano: 'Século XVIII e XIX', feito: 'Ácido acético (vinagre) é o primeiro ácido a ser industrializado.' },
+
 ]
 </script>
 
@@ -108,10 +101,11 @@ const marcos = [
   <div class="page">
     <PageHero
       eixo="Eixo 02 · 02/05"
-      kicker="Do cotidiano antigo à indústria"
+      kicker="Da antiguidade à atualidade"
       title="História dos Ácidos Carboxílicos"
-      lead="Antes de conhecerem a estrutura molecular, as pessoas já usavam vinagre e frutas ácidas no dia a dia. A história da classe é a história da Química se tornando uma ciência: isolar, nomear, estruturar e produzir."
-      :chips="['Antiguidade', 'Scheele · 1784', 'Wöhler · 1828', 'Kolbe · 1845', 'Indústria moderna']"
+      lead="Os ácidos carboxílicos já eram usados pelos povos ágrafos, mesmo sem eles terem 
+      conhecimentos sobre suas estruturas."
+      :chips="['Antiguidade','Geber · séc. VIII', 'Scheele · 1784', 'Lavoisier  · 1776', 'Bergman · 1777', 'Kolbe · 1845', 'Indústria moderna']"
     >
       <template #media>
         <div class="molecule-figure">
@@ -130,18 +124,16 @@ const marcos = [
       <div class="container">
         <Reveal>
           <div class="section-head">
-            <p class="kicker">Ponto de partida</p>
+            <p class="kicker">Início</p>
             <h2>A prática <span class="grad-text">veio antes da teoria</span></h2>
             <p class="lead">
-              A humanidade usava vários ácidos carboxílicos <strong>muito antes</strong> de saber que
-              eles existiam como moléculas. O vinagre é o exemplo perfeito: ingrediente da cozinha,
-              da conservação e até de remédios caseiros — sem que ninguém soubesse que o responsável
-              pela acidez era, principalmente, o <strong>ácido acético</strong>.
+              O utilização de ácidos carboxílicos começou bem <strong>antes da descoberta</strong> de suas estruturas.
+              Os sumérios - <strong>uma das primeiras civilizações </strong>- usavam o vinagre como condimento, conservante, antibiótico e produto de limpeza (detergente). 
             </p>
           </div>
         </Reveal>
 
-        <div class="grid grid-3" style="margin-top: 1.6rem">
+        <!-- <div class="grid grid-3" style="margin-top: 1.6rem">
           <Reveal :delay="60">
             <div class="card">
               <p class="panel-label">Conservar</p>
@@ -167,7 +159,7 @@ const marcos = [
               </p>
             </div>
           </Reveal>
-        </div>
+        </div> -->
       </div>
     </section>
 
@@ -177,7 +169,7 @@ const marcos = [
         <Reveal>
           <div class="section-head">
             <p class="kicker">Linha do tempo</p>
-            <h2>Seis momentos que <span class="grad-text">recontam a história</span></h2>
+            <h2>Momentos que <span class="grad-text">marcaram a história </span>dos Ácidos Carboxílados</h2>
           </div>
         </Reveal>
 
@@ -210,7 +202,7 @@ const marcos = [
       </div>
     </section>
 
-    <!-- AVANÇO CIENTÍFICO -->
+    <!-- AVANÇO CIENTÍFICO
     <section class="section" style="border-top: 1px solid var(--line)">
       <div class="container">
         <Reveal>
@@ -238,15 +230,15 @@ const marcos = [
           </Reveal>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- MARCOS -->
     <section class="section section-tight" style="border-top: 1px solid var(--line)">
       <div class="container">
         <Reveal>
           <div class="section-head">
-            <p class="kicker">Para decorar e citar</p>
-            <h2>Marcos em uma linha do tempo <span class="grad-text">de bolso</span></h2>
+            <p class="kicker">Para não errar</p>
+            <h2>Recapitulando <span class="grad-text">a história</span></h2>
           </div>
         </Reveal>
 
@@ -259,7 +251,7 @@ const marcos = [
           </Reveal>
         </div>
 
-        <Reveal :delay="180">
+        <!-- <Reveal :delay="180">
           <div class="panel card-amber" style="margin-top: 2rem">
             <p style="margin: 0">
               <strong>Gancho para a apresentação:</strong> o ácido acético é um ótimo exemplo de
@@ -268,7 +260,7 @@ const marcos = [
               toneladas por ano no mundo.
             </p>
           </div>
-        </Reveal>
+        </Reveal> -->
       </div>
     </section>
   </div>
