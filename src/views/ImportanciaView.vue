@@ -1,6 +1,7 @@
 <script setup>
 import PageHero from '../components/PageHero.vue'
 import Molecule from '../components/Molecule.vue'
+import MoleculeShowcase from '../components/MoleculeShowcase.vue'
 import Reveal from '../components/Reveal.vue'
 import Counter from '../components/Counter.vue'
 
@@ -44,23 +45,61 @@ const ester = {
   ],
 }
 
-const oleico = {
+const acidoCitrico = {
   atoms: [
-    { x: 6, y: 50, el: 'R' },
-    { x: 52, y: 50, el: 'C' },
-    { x: 92, y: 50, el: 'C' },
-    { x: 132, y: 50, el: 'R' },
-    { x: 170, y: 30, el: 'O' },
-    { x: 170, y: 68, el: 'O' },
-    { x: 190, y: 80, el: 'H' },
+    { x: 18, y: 52, el: 'O' }, { x: 42, y: 52, el: 'C' }, { x: 66, y: 52, el: 'C' },
+    { x: 94, y: 52, el: 'C' }, { x: 122, y: 52, el: 'C' }, { x: 146, y: 52, el: 'C' },
+    { x: 170, y: 52, el: 'O' }, { x: 42, y: 24, el: 'O' }, { x: 146, y: 24, el: 'O' },
+    { x: 94, y: 20, el: 'C' }, { x: 72, y: 7, el: 'O' }, { x: 116, y: 7, el: 'O' },
+    { x: 94, y: 82, el: 'O' }, { x: 190, y: 52, el: 'H' }, { x: 94, y: 98, el: 'H' },
+    { x: 132, y: 7, el: 'H' }, { x: 5, y: 52, el: 'H' },
   ],
   bonds: [
-    [0, 1],
-    [1, 2, 2],
-    [2, 3],
-    [3, 4, 2],
-    [3, 5],
-    [5, 6],
+    [0, 1], [1, 2], [1, 7, 2], [2, 3], [3, 4], [3, 9], [3, 12], [4, 5],
+    [5, 6], [5, 8, 2], [9, 10, 2], [9, 11], [6, 13], [12, 14], [11, 15], [0, 16],
+  ],
+}
+
+const acidoBenzoico = {
+  atoms: [
+    { x: 48, y: 18, el: 'C' }, { x: 76, y: 34, el: 'C' }, { x: 76, y: 66, el: 'C' },
+    { x: 48, y: 82, el: 'C' }, { x: 20, y: 66, el: 'C' }, { x: 20, y: 34, el: 'C' },
+    { x: 108, y: 50, el: 'C' }, { x: 136, y: 30, el: 'O' }, { x: 136, y: 70, el: 'O' },
+    { x: 158, y: 82, el: 'H' },
+  ],
+  bonds: [[0, 1, 2], [1, 2], [2, 3, 2], [3, 4], [4, 5, 2], [5, 0], [1, 6], [6, 7, 2], [6, 8], [8, 9]],
+}
+
+const acidoSalicilico = {
+  atoms: [
+    ...acidoBenzoico.atoms,
+    { x: 4, y: 8, el: 'O' }, { x: 4, y: -8, el: 'H' },
+  ],
+  bonds: [...acidoBenzoico.bonds, [5, 10], [10, 11]],
+}
+
+const acidoFormico = {
+  atoms: [
+    { x: 58, y: 50, el: 'C' }, { x: 92, y: 28, el: 'O' }, { x: 92, y: 72, el: 'O' },
+    { x: 118, y: 84, el: 'H' }, { x: 24, y: 50, el: 'H' },
+  ],
+  bonds: [[0, 1, 2], [0, 2], [2, 3], [0, 4]],
+}
+
+const acidoOleico = {
+  atoms: [
+    { x: 12, y: 52, el: 'C' }, { x: 27, y: 39, el: 'C' }, { x: 42, y: 52, el: 'C' },
+    { x: 57, y: 39, el: 'C' }, { x: 72, y: 52, el: 'C' }, { x: 87, y: 39, el: 'C' },
+    { x: 102, y: 52, el: 'C' }, { x: 117, y: 39, el: 'C' }, { x: 132, y: 52, el: 'C' },
+    { x: 147, y: 68, el: 'C' }, { x: 164, y: 68, el: 'C' }, { x: 179, y: 52, el: 'C' },
+    { x: 194, y: 39, el: 'C' }, { x: 209, y: 52, el: 'C' }, { x: 224, y: 39, el: 'C' },
+    { x: 239, y: 52, el: 'C' }, { x: 254, y: 39, el: 'C' }, { x: 271, y: 52, el: 'C' },
+    { x: 292, y: 34, el: 'O' }, { x: 292, y: 70, el: 'O' }, { x: 310, y: 82, el: 'H' },
+  ],
+  bonds: [
+    [0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9, 2],
+    [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15], [15, 16], [16, 17],
+    [17, 18, 2], [17, 19], [19, 20],
   ],
 }
 
@@ -68,6 +107,11 @@ const acidos = [
   {
     icone: 'Ac',
     nome: 'Ácido Acético (Ácido Etanóico)',
+    molecula: acido,
+    formula: 'CH₃COOH',
+    nomeSistematico: 'ácido etanoico',
+    moleculePath: 'molecules/acetic-acid.sdf',
+    atomCounts: { C: 2, O: 2, H: 4 },
     sub: 'Conhecido principalmente por ser o principal componente do vinagre',
     domestica: 'Ele é utilizado diluído em água em diversas casas brasileiras para temperar os alimentos, sendo chamado de vinagre; nessa forma também é muito utilizado na limpeza para remover manchas, gordura e até mofo.',
     industrial: 'É utilizado na produção de plásticos, essências artificiais e no tingimento de tecidos.',
@@ -76,6 +120,13 @@ const acidos = [
   {
     icone: 'Ci',
     nome: 'Ácido Cítrico',
+    molecula: acidoCitrico,
+    formula: 'C₆H₈O₇',
+    nomeSistematico: 'ácido 2-hidroxipropano-1,2,3-tricarboxílico',
+    view: '-10 -15 220 130',
+    escala: 0.68,
+    moleculePath: 'molecules/citric-acid.sdf',
+    atomCounts: { C: 6, O: 7, H: 8 },
     sub: 'É encontrado naturalmente em frutas cítricas como laranja e limão',
     domestica: 'Esse ácido pode ser utilizado em conservas caseiras, geleias e doces, para controlar a gelificação e realçar o sabor frutado.',
     industrial: 'É utilizado como acidulante, aumentando o sabor azedo ou ácido e controlando o pH do alimento ou bebida; também usado como antioxidante, prevenindo a oxidação do alimento, preservando por mais tempo a cor do alimento e aumentando sua validade.',
@@ -83,16 +134,29 @@ const acidos = [
   },
   {
     icone: 'Gr',
-    nome: 'Ácidos Graxos',
-    sub: 'São encontrados em gorduras e óleos, possuem cadeias longas, podendo ser saturadas ou insaturadas',
-    domestica: 'São a base de sabões e detergentes, pois suas moléculas interagem com a gordura e a água, facilitando a limpeza.',
-    industrial: 'Na indústria são utilizados na produção de lubrificantes, tintas, plastificantes e biocombustíveis.',
-    tecnologica: 'São utilizados na criação de cremes para a pele para aumentar a absorção dos ativos presentes no creme; além disso, são usados em medicamentos para controlar a liberação dos fármacos.',
-    mostraOleico: true,
+    nome: 'Ácido Oleico (Ômega 9)',
+    molecula: acidoOleico,
+    formula: 'C₁₈H₃₄O₂',
+    nomeSistematico: 'ácido (9Z)-octadec-9-enoico',
+    view: '0 0 325 100',
+    escala: 0.55,
+    moleculePath: 'molecules/oleic-acid.sdf',
+    atomCounts: { C: 18, O: 2, H: 34 },
+    sub: 'Encontrado em óleos vegetais, é um ácido graxo de cadeia longa com uma insaturação cis',
+    domestica: 'O ácido oleico e seus derivados aparecem em óleos, sabões e formulações de limpeza; seus sais ajudam a dispersar gorduras em água.',
+    industrial: 'É empregado na produção de tensoativos, lubrificantes, tintas, plastificantes e derivados oleoquímicos.',
+    tecnologica: 'Seus derivados podem integrar emulsões cosméticas, sistemas farmacêuticos e matérias-primas para transformações químicas.',
   },
   {
     icone: 'Sa',
     nome: 'Ácido Salicílico',
+    molecula: acidoSalicilico,
+    formula: 'C₇H₆O₃',
+    nomeSistematico: 'ácido 2-hidroxibenzoico',
+    view: '-15 -20 195 125',
+    escala: 0.76,
+    moleculePath: 'molecules/salicylic-acid.sdf',
+    atomCounts: { C: 7, O: 3, H: 6 },
     sub: 'Tem afinidade natural por óleos, permitindo a penetração nos poros',
     domestica: 'É utilizado em géis de limpeza fácil, shampoos e hidratantes para pele oleosa.',
     industrial: 'É usado em maquiagens tecnológicas, como bases líquidas que controlam a oleosidade da pele.',
@@ -101,6 +165,13 @@ const acidos = [
   {
     icone: 'Bz',
     nome: 'Ácido Benzóico',
+    molecula: acidoBenzoico,
+    formula: 'C₇H₆O₂',
+    nomeSistematico: 'ácido benzoico',
+    view: '0 0 180 105',
+    escala: 0.76,
+    moleculePath: 'molecules/benzoic-acid.sdf',
+    atomCounts: { C: 7, O: 2, H: 6 },
     sub: 'É usado por suas propriedades conservantes e antimicrobianas',
     domestica: 'Está presente em produtos de higiene pessoal como loções e cremes.',
     industrial: 'É utilizado como conservante em bebidas gaseificadas, molhos, entre outros, pois impede o crescimento de fungos e bactérias.',
@@ -109,6 +180,13 @@ const acidos = [
   {
     icone: 'Me',
     nome: 'Ácido Metanóico (Ácido Fórmico)',
+    molecula: acidoFormico,
+    formula: 'HCOOH',
+    nomeSistematico: 'ácido metanoico',
+    view: '0 0 145 105',
+    escala: 0.85,
+    moleculePath: 'molecules/formic-acid.sdf',
+    atomCounts: { C: 1, O: 2, H: 2 },
     sub: 'É produzido naturalmente por formigas, por isso é chamado de ácido fórmico; entretanto, também é encontrado em abelhas e plantas como urtigas',
     domestica: 'É utilizado na limpeza pesada, pois está presente em produtos com funções desincrustantes.',
     industrial: 'É utilizado no curtimento de couros para preservá-los, no acabamento de tecidos, para coagular o látex e para controle de pH em diversos produtos.',
@@ -187,8 +265,8 @@ const numeros = [
           </div>
         </Reveal>
 
-        <div class="grid grid-3">
-          <Reveal v-for="(a, i) in acidos" :key="a.nome" :delay="(i % 3) * 90">
+        <div class="acid-grid">
+          <Reveal v-for="(a, i) in acidos" :key="a.nome" :delay="(i % 2) * 90">
             <div class="card acido-card">
               <div class="frente-head">
                 <span class="frente-icone">{{ a.icone }}</span>
@@ -196,13 +274,29 @@ const numeros = [
               </div>
               <p class="acido-sub">{{ a.sub }}</p>
 
-              <div v-if="a.mostraOleico" class="oleico-fig">
-                <Molecule :atoms="oleico.atoms" :bonds="oleico.bonds" view="0 0 205 95" :scale="0.9" />
-                <span class="oleico-caption">
-                  Na imagem acima está o ácido oleico, também conhecido como ômega 9, um ácido
-                  graxo, ele é monoinsaturado.
-                </span>
-              </div>
+              <figure class="molecule-card-fig">
+                <MoleculeShowcase
+                  :atoms="a.molecula.atoms"
+                  :bonds="a.molecula.bonds"
+                  :view="a.view || '0 0 130 100'"
+                  :scale="a.escala || 0.85"
+                  :name="a.nome"
+                  has3d
+                  :molecule-path="a.moleculePath"
+                  :formula="a.formula"
+                  :model-name="a.nome"
+                  :atom-counts="a.atomCounts"
+                />
+                <figcaption class="molecule-card-caption">
+                  <strong>{{ a.formula }}</strong>
+                  <span>{{ a.nomeSistematico }}</span>
+                </figcaption>
+              </figure>
+
+              <p v-if="a.icone === 'Gr'" class="molecule-note">
+                Ácido graxo monoinsaturado: a dupla ligação cis está no carbono 9 contado a partir
+                da carboxila; “ômega 9” indica sua posição a partir da outra extremidade da cadeia.
+              </p>
 
               <ul class="clean tag-list">
                 <li>
@@ -337,6 +431,19 @@ const numeros = [
 .acido-card {
   display: flex;
   flex-direction: column;
+  height: 100%;
+}
+
+.acid-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+  align-items: stretch;
+}
+
+.acid-grid > :deep(.reveal) {
+  min-width: 0;
+  height: 100%;
 }
 
 .acido-sub {
@@ -345,17 +452,44 @@ const numeros = [
   color: var(--muted);
 }
 
-.oleico-fig {
-  margin-bottom: 0.9rem;
+.molecule-card-fig {
+  margin: 0 0 0.9rem;
+  overflow: hidden;
+  border-radius: var(--radius);
 }
 
-.oleico-caption {
-  display: block;
-  margin-top: 0.2rem;
+.molecule-card-fig :deep(.molecule-showcase__viewport) {
+  height: clamp(260px, 28vw, 300px);
+}
+
+.molecule-card-fig :deep(.molecule-showcase__viewport--3d) {
+  height: clamp(290px, 31vw, 330px);
+}
+
+.molecule-card-caption {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.6rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--line);
   font-size: 0.78rem;
   color: var(--muted);
   line-height: 1.4;
   text-align: center;
+}
+
+.molecule-card-caption strong {
+  color: var(--amber);
+  font-family: var(--font-mono);
+}
+
+.molecule-note {
+  margin: -0.25rem 0 0.9rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+  line-height: 1.45;
 }
 
 ul.tag-list {
@@ -409,9 +543,23 @@ ul.tag-list li {
 }
 
 @media (max-width: 480px) {
+  .acido-card {
+    padding: 1.15rem;
+  }
+
+  .molecule-card-fig {
+    margin-inline: -0.2rem;
+  }
+
   ul.tag-list li {
     grid-template-columns: 1fr;
     gap: 0.25rem;
+  }
+}
+
+@media (max-width: 780px) {
+  .acid-grid {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
