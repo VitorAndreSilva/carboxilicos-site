@@ -79,6 +79,8 @@ const grupos = [
       { url: 'https://priya39sspace.quora.com/In-1845-which-German-chemist-published-a-method-for-the-synthesis-of-acetic-acid-a-natural-product-containing-two-carb', titulo: 'Informação e tecnologia científica' },
       { url: 'https://querobolsa.com.br/enem/quimica/quimica-organica', titulo: 'Química Orgânica' },
       { url: 'https://www.letstalkacademy.com/first-organic-acid-produced-industrially/', titulo: 'O Primeiro Ácido Orgânico Produzido Industrialmente: Uma Perspectiva Histórica' },
+      { url: 'https://www.sciencedirect.com/topics/chemical-engineering/carboxylic-acid', titulo: 'Ácido carboxílico' },
+
     ],
   },
   {
