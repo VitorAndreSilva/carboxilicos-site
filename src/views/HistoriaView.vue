@@ -103,7 +103,7 @@ const marcos = [
       eixo="Eixo 02 · 02/05"
       kicker="Da antiguidade à atualidade"
       title="História dos Ácidos Carboxílicos"
-      lead="Os ácidos carboxílicos já eram usados pelos povos ágrafos, mesmo sem eles terem 
+      lead="Os ácidos carboxílicos já eram usados pelos povos antigos, mesmo sem eles terem 
       conhecimentos sobre suas estruturas."
       :chips="['Antiguidade','Geber · séc. VIII', 'Scheele · 1784', 'Lavoisier  · 1776', 'Bergman · 1777', 'Kolbe · 1845', 'Indústria moderna']"
     >
