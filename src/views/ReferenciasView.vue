@@ -49,7 +49,7 @@ const grupos = [
     titulo: "Histórico",
     icone: "his",
     descricao:
-      "Fontes sobre o contexto histórico e a trajetória da classe dos ácidos carboxílicos.",
+      "Fontes sobre o contexto histórico e a trajetória da classe dos ácidos carboxílicos.",       
     refs: [
       {
         url: "https://chem.libretexts.org/Bookshelves/Organic_Chemistry/Organic_Chemistry_(Morsch_et_al.)/20%3A_Carboxylic_Acids_and_Nitriles/20.00%3A_Chapter_Objectives_and_Introduction_to_Carboxylic_Acids",
@@ -60,7 +60,7 @@ const grupos = [
         url: "https://brasilescola.uol.com.br/quimica/Acido-acetico.htm",
         titulo: "Ácido acético",
       },
-       { url: 'https://chem.libretexts.org/Bookshelves/Organic_Chemistry/Organic_Chemistry_(Morsch_et_al.)/20%3A_Carboxylic_Acids_and_Nitriles/20.00%3A_Chapter_Objectives_and_Introduction_to_Carboxylic_Acids', titulo: 'Objetivos do Capítulo e Introdução aos Ácidos Carboxílicos' },
+      { url: 'https://chem.libretexts.org/Bookshelves/Organic_Chemistry/Organic_Chemistry_(Morsch_et_al.)/20%3A_Carboxylic_Acids_and_Nitriles/20.00%3A_Chapter_Objectives_and_Introduction_to_Carboxylic_Acids', titulo: 'Objetivos do Capítulo e Introdução aos Ácidos Carboxílicos' },
       { url: 'https://brasilescola.uol.com.br/quimica/Acido-acetico.htm', titulo: 'Ácido acético' },
       { url: 'https://mundoeducacao.uol.com.br/historiageral/sumerios.htm', titulo: 'Súmerios' },
       { url: 'https://womersleyfoods.com/pages/a-short-history-of-vinegar', titulo: 'História do Vinagre' },
@@ -80,7 +80,6 @@ const grupos = [
       { url: 'https://querobolsa.com.br/enem/quimica/quimica-organica', titulo: 'Química Orgânica' },
       { url: 'https://www.letstalkacademy.com/first-organic-acid-produced-industrially/', titulo: 'O Primeiro Ácido Orgânico Produzido Industrialmente: Uma Perspectiva Histórica' },
       { url: 'https://www.sciencedirect.com/topics/chemical-engineering/carboxylic-acid', titulo: 'Ácido carboxílico' },
-
     ],
   },
   {
